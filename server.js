@@ -36,6 +36,6 @@ mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/thisvsthatdb')
   app.use('/api/comparisions', ComparisionsController);
 
 
-  app.listen(8080, function(){
+  app.listen(process.env.PORT || 8080, function(){
     console.log('This is a MEAN app');
   });
