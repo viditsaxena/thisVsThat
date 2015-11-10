@@ -9,8 +9,9 @@
   var app = express();
 
 // Database
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/thisvsthatdb');
 
-  mongoose.connect('mongodb://localhost/thisvsthatdb');
+  // mongoose.connect('mongodb://localhost/thisvsthatdb');
 
   // *** Server Logging ***
   app.use(morgan('dev'));
