@@ -96,10 +96,10 @@
                 </div>
 
 
+                <!-- Modal Structure -->
 
                 <li><a class="waves-effect waves-light btn modal-trigger" href="#modal2">Admin</a></li>
 
-                <!-- Modal Structure -->
                 <div id="modal2" class="modal">
                   <div class="modal-content">
                     <h4>Admin</h4>
@@ -117,6 +117,21 @@
 
 
   <div class="container">
+    <br>
+    <br>
+    <div class="row">
+      <div class="col s12">
+
+        <h5 class="center">
+          A simple way to decide between similar choices.
+        </h5>
+
+      </div>
+
+    </div>
+  <br>
+  <br>
+    <hr>
 
 
     <div ng-show="token" class="new-comparision">
@@ -151,9 +166,10 @@
       </div> -->
 
     <!-- Show all comparisions -->
+    <br>
     <div class="valign-wrapper row" ng-repeat = 'comparision in comparisions'>
       <div class="col s6 offset-s3">
-        <h3 class="center-align">{{ comparision.name }}</h3>
+        <h6 class="center-align"><strong><u>{{ comparision.name }}</u></strong></h6>
         <!-- <button type="button" ng-click="removeComparision(comparision)">Remove</button> -->
 
     <table>
