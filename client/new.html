@@ -18,7 +18,7 @@
     <script src="/js/init.js"></script>
 
 
-</head>
+</head> 
 <body>
 
 
@@ -32,33 +32,32 @@
 
           <ul class="right hide-on-med-and-down">
 
-
-
-            <!-- LOGOUT -->
-            <li ng-show="token" class="Log-Out">
-              <button class="waves-effect waves-light btn-flat"
-                type="button" ng-click="logOut()" name="button">LogOut
-              </button>
-            </li>
-            <!-- SIGN UP -->
-            <li ng-hide="token" class="sign-up">
-              <a class="waves-effect waves-light btn-flat modal-trigger" href="#modal1">Sign Up
-              </a>
-            </li>
-            <!-- LOG IN -->
-            <li ng-hide="token" class="log-in">
-              <a class="waves-effect waves-light btn-flat modal-trigger" href="#modal2">Log In
-              </a>
-            </li>
-
             <!-- FAQ -->
             <li  class="faq-link">
               <a class="waves-effect waves-light btn-flat" href="#faq">FAQ
               </a>
             </li>
 
+            <!-- LOGOUT -->
+            <!-- <li ng-show="token" class="Log-Out">
+              <button class="waves-effect waves-light btn-flat"
+                type="button" ng-click="logOut()" name="button">LogOut
+              </button>
+            </li> -->
+            <!-- SIGN UP -->
+            <!-- <li ng-hide="token" class="sign-up">
+              <a class="waves-effect waves-light btn-flat modal-trigger" href="#modal1">Sign Up
+              </a>
+            </li> -->
+            <!-- LOG IN -->
+            <!-- <li ng-hide="token" class="log-in">
+              <a class="waves-effect waves-light btn-flat modal-trigger" href="#modal2">Log In
+              </a>
+            </li> -->
+
+
             <!-- MODAL FOR SIGN UP -->
-            <div id="modal1" class="modal grey">
+            <!-- <div id="modal1" class="modal grey">
               <div class="modal-content">
                 <h4 >Sign Up</h4>
                 <form ng-submit="createUser()">
@@ -67,10 +66,10 @@
                   <input class="modal-action modal-close waves-effect waves-red btn-flat" type="submit">
                 </form>
               </div>
-            </div>
+            </div> -->
 
             <!-- MODAL FOR LOG IN -->
-            <div id="modal2" class="modal grey">
+            <!-- <div id="modal2" class="modal grey">
               <div class="modal-content">
                 <h4>Log In</h4>
                 <form ng-submit="obtainToken()">
@@ -79,7 +78,7 @@
                   <input class="modal-action modal-close waves-effect waves-red btn-flat" type="submit">
                 </form>
              </div>
-            </div>
+            </div> -->
 
 
 
@@ -95,7 +94,7 @@
       <div class="col s12">
 
         <h5 class="center">
-          A simple way to decide between similar choices. Login to vote.
+          A simple way to decide between similar choices.
         </h5>
 
       </div>
@@ -103,19 +102,24 @@
     </div>
   <br>
   <br>
+    <hr>
 
-  <div class="row">
 
-  <div class="col s6 offset-s3">
-  <form>
-     <div class="input-field">
-       <input id="search" type="search" ng-model="searchQuery.name" placeholder="Search for a category.eg- cars, airlines, football etc" required>
-       <label for="search"><i class="material-icons">search</i></label>
-     </div>
-   </form>
-</div>
-</div>
+    <div class="new-comparision">
+      <form ng-submit="addComparision()">
+        <input ng-model = "newComparision.name" type="text" name="name" placeholder="...comparision category eg- Programming Languages, cars, airlines etc">
 
+        <ul>
+          <li ng-repeat="item in newComparision.items">
+            <input type="text" ng-model="item.name" placeholder="...item name">
+            <input type="number" ng-model="item.votes" value="1" placeholder="...votes">
+          </li>
+          <button type="button" ng-click="addItem()" name="button">+</button>
+        </ul>
+
+        <input type="submit">
+      </form>
+    </div>
 
 
       <!-- <div class="valign-wrapper row">
@@ -134,19 +138,18 @@
 
     <!-- Show all comparisions -->
     <br>
-    <div class="row">
-
-    <div class="valign-wrapper" ng-repeat = 'comparision in comparisions | filter:searchQuery |orderBy:orderByField'>
+    <!-- <div class="row">
+    <div class="valign-wrapper" ng-repeat = 'comparision in comparisions'>
       <div class="col s6 offset-s3">
-        <h6 class="center-align"><strong><u>{{ comparision.name }}</u></strong></h6>
+        <h6 class="center-align"><strong><u>{{ comparision.name }}</u></strong></h6> -->
         <!-- <button type="button" ng-click="removeComparision(comparision)">Remove</button> -->
 
-    <table>
+    <!-- <table>
        <thead class="center-align">
          <tr class="center-align">
              <th data-field="name">Name</th>
              <th data-field="Ups">Ups</th>
-             <th ng-show="token" class="right" data-field="Vote">Vote</th>
+             <th class="right" data-field="Vote">Vote</th>
          </tr>
        </thead>
 
@@ -154,7 +157,7 @@
          <tr ng-repeat = 'item in comparision.items'>
            <td>{{item.name}}</td>
            <td>{{ item.votes}}</td>
-           <td ng-show="token" class="right">
+           <td class="right">
              <button class="grey" type="submit" ng-disabled="isDisabled" ng-click="disableButton(comparision, item)">
              +
              </button>
@@ -167,7 +170,7 @@
 
    </div>
 
- </div>
+ </div> -->
 
 
 
@@ -177,7 +180,7 @@
 
 
 
-<div class="container" id='faq'>
+<!-- <div class="container" id='faq'>
     <hr>
 
   <h4 class="center">Frequently Asked Questions</h4>
@@ -197,7 +200,7 @@
     </li>
   </ul>
 
-</div>
+</div> -->
 
 
 

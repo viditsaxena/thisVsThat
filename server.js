@@ -29,6 +29,15 @@ mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/thisvsthatdb')
     res.sendFile(__dirname + '/client/index.html');
   });
 
+  app.get('/new', function(req, res){
+    res.sendFile(__dirname + '/client/new.html');
+  });
+
+  app.get('/comparision', function(req, res){
+    res.sendFile(__dirname + '/client/comparision.html');
+  });
+
+
   // *** Routing/Controllers ***
   var UsersController = require('./server/controllers/users');
   app.use('/api/users', UsersController);

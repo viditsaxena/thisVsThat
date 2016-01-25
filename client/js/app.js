@@ -7,6 +7,8 @@ angular.module('thisVsThat').controller('UsersController', ['$scope', '$http', '
 
   $scope.welcomeMessage = 'Hello from Angular';
   $scope.users = [];
+  $scope.searchQuery = "";
+  $scope.orderByField = 'name';
   $scope.newUser = {};
   $scope.logInUser = {};
   $scope.comparisions = [];
